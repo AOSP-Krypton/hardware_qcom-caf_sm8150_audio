@@ -562,6 +562,7 @@ LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
 
+ifeq ($(BUILD_HDMIPASSTHROUGH),true)
 #-------------------------------------------
 #            Build HDMI PASSTHROUGH
 #-------------------------------------------
@@ -633,6 +634,7 @@ ifneq ($(filter kona lahaina holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
+endif
 
 #-------------------------------------------
 #            Build BATTERY_LISTENER
